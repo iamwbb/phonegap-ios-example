@@ -1,5 +1,15 @@
 (function($){
  
+	var App47EventPlugin;
+	
+	$.getScript("phonegap-1.0.0.js", function(){	
+	   App47EventPlugin = {
+	     sendGenericEvent: function(message, success, fail) {
+	          return PhoneGap.exec(success, fail, "com.app47.genericevent", "sendGenericEvent", message);
+	     }
+	  };	
+	});
+	
 	$(function(){
 
 	    $("#submit_deal").submit(function(event, info) {
@@ -22,9 +32,10 @@
 						$('form :input').val("");	        
 						$("#notice").fadeOut(3200);
 					});
+					App47EventPlugin.sendGenericEvent(["deal submitted"]);
 				  }
 			});
-
+			
 	        return false;       
 	    });
 
