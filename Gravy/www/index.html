@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Gravy</title>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript"> google.load("jquery", "1.4.2"); </script>
+		<script src="https://raw.github.com/senchalabs/jQTouch/master/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
+		<style type="text/css" media="screen">@import "jqtouch.css";</style>
+		<style type="text/css" media="screen">@import "themes/apple/theme.css";</style>
+		<script src="gravy.js" type="application/x-javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="utf-8">
+           $.jQTouch({
+					icon: 'icon.png',
+					addGlossToIcon: true,
+					statusBar: 'black'
+				});
+		
+        </script>
+    </head>
+    <body>
+        <div id="jqt">
+            <div id="home">
+                <div class="toolbar">
+                    <h1>Share a deal!</h1>
+                </div>
+                <form method="post" id="submit_deal">
+                    <ul>
+                        <li>
+                            <input type="text" placeholder="Description" name="description" id="description" 
+                                   autocapitalize="off" autocorrect="on" autocomplete="on" />
+                        </li>
+                        <li>
+                            <input type="text" placeholder="Tags" name="tags" id="tags" autocapitalize="off" 
+                                   autocorrect="on" autocomplete="on" />
+                        </li>
+                        <a href="#" style="margin: 10px;" class="whiteButton submit">Share it!</a>
+
+                    </ul>
+                </form>
+                <div id="notice">
+	 				
+				</div>
+            </div>
+
+        </div>
+    </body>
+</html>
