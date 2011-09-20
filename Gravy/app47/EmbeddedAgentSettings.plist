@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>application id</key>
-	<string>&lt;&lt; Your app id here &gt;&gt;</string>
+	<string>4e5d36392fc7640001000020</string>
 	<key>configuration update frequency</key>
 	<real>0.5</real>
 	<key>delay data upload interval</key>

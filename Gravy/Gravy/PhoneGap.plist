@@ -16,7 +16,7 @@
 	<array/>
 	<key>Plugins</key>
 	<dict>
-		<key>com.app47.genericevent</key>
+		<key>com.app47.sdk</key>
 		<string>App47Event</string>
 		<key>com.phonegap.accelerometer</key>
 		<string>PGAccelerometer</string>

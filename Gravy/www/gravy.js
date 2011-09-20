@@ -1,13 +1,34 @@
 (function($){
  
-	var App47EventPlugin;
+	var App47Plugin;
 	
 	$.getScript("phonegap-1.0.0.js", function(){	
-	   App47EventPlugin = {
-	     sendGenericEvent: function(message, success, fail) {
-	          return PhoneGap.exec(success, fail, "com.app47.genericevent", "sendGenericEvent", message);
-	     }
-	  };	
+                
+                
+        App47Plugin = function() {
+           this.serviceName = "com.app47.sdk";
+        };         
+                
+        App47Plugin.prototype.sendGenericEvent = function(message, success, fail) {
+           return PhoneGap.exec(success, fail, this.serviceName, "sendGenericEvent", message);
+        };
+    
+                
+                
+//	   App47EventPlugin = {
+//	     sendGenericEvent: function(message, success, fail) {
+//	          return PhoneGap.exec(success, fail, "com.app47.genericevent", "sendGenericEvent", message);
+//         };
+//                
+//        startTimedEvent: function(message, success, fail) {
+//          return PhoneGap.exec(success, fail, "com.app47.starttimedevent", "startTimedEvent", message);
+//        };
+//                
+//        endTimedEvent: function(message, success, fail) {
+//          return PhoneGap.exec(success, fail, "com.app47.endtimedevent", "endTimedEvent", message);
+//        };
+//                
+//	  };	
 	});
 	
 	$(function(){
@@ -32,7 +53,7 @@
 						$('form :input').val("");	        
 						$("#notice").fadeOut(3200);
 					});
-					App47EventPlugin.sendGenericEvent(["deal submitted"]);
+					App47Plugin.sendGenericEvent(["deal submitted"]);
 				  }
 			});
 			
