@@ -37,7 +37,7 @@
 		F6115848140D77060067391A /* EmbeddedAgentSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6115841140D77060067391A /* EmbeddedAgentSettings.plist */; };
 		F6115849140D77060067391A /* GTMStackTrace.m in Sources */ = {isa = PBXBuildFile; fileRef = F6115846140D77060067391A /* GTMStackTrace.m */; };
 		F611584A140D77060067391A /* libEmbeddedAgent.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6115847140D77060067391A /* libEmbeddedAgent.a */; };
-		F611584D140D83200067391A /* App47Event.m in Sources */ = {isa = PBXBuildFile; fileRef = F611584C140D83200067391A /* App47Event.m */; };
+		F611584D140D83200067391A /* App47PGPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = F611584C140D83200067391A /* App47PGPlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,8 +80,8 @@
 		F6115845140D77060067391A /* GTMStackTrace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMStackTrace.h; sourceTree = "<group>"; };
 		F6115846140D77060067391A /* GTMStackTrace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMStackTrace.m; sourceTree = "<group>"; };
 		F6115847140D77060067391A /* libEmbeddedAgent.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libEmbeddedAgent.a; sourceTree = "<group>"; };
-		F611584B140D83200067391A /* App47Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App47Event.h; sourceTree = "<group>"; };
-		F611584C140D83200067391A /* App47Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App47Event.m; sourceTree = "<group>"; };
+		F611584B140D83200067391A /* App47PGPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; path = App47PGPlugin.h; sourceTree = "<group>"; };
+		F611584C140D83200067391A /* App47PGPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App47PGPlugin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,8 +239,8 @@
 		F61157FC140D2C6F0067391A /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				F611584B140D83200067391A /* App47Event.h */,
-				F611584C140D83200067391A /* App47Event.m */,
+				F611584B140D83200067391A /* App47PGPlugin.h */,
+				F611584C140D83200067391A /* App47PGPlugin.m */,
 				F61157FD140D2C6F0067391A /* README */,
 			);
 			name = Plugins;
@@ -363,7 +363,7 @@
 				F61157DC140D2C6F0067391A /* main.m in Sources */,
 				F61157FB140D2C6F0067391A /* AppDelegate.m in Sources */,
 				F6115849140D77060067391A /* GTMStackTrace.m in Sources */,
-				F611584D140D83200067391A /* App47Event.m in Sources */,
+				F611584D140D83200067391A /* App47PGPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +503,7 @@
 				F6115802140D2C6F0067391A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -27,10 +27,10 @@
     return [super init];
 }
 
-void handleUncaughtException(NSException *exception)
-{
-    EALogCrashException(exception, @"Application crashed");
-}
+//void handleUncaughtException(NSException *exception)
+//{
+//    EALogCrashException(exception, @"Application crashed");
+//}
 
 /**
  * This is main kick off after the app inits, the views and Settings are setup here. (preferred - iOS4 and up)
@@ -38,7 +38,7 @@ void handleUncaughtException(NSException *exception)
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-	NSSetUncaughtExceptionHandler(&handleUncaughtException);
+//	NSSetUncaughtExceptionHandler(&handleUncaughtException);
     [EmbeddedAgent configureAgent];
     
 	NSArray *keyArray = [launchOptions allKeys];

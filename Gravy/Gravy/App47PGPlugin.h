@@ -9,18 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <PhoneGap/PGPlugin.h>
 
-@interface App47Event : PGPlugin {
-    NSString* callbackID; 
-}
-
-@property (nonatomic, copy) NSString* callbackID;
-
-//Instance Method  
+@interface App47PGPlugin : PGPlugin
+ 
 - (void) sendGenericEvent:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
-
 - (void) startTimedEvent:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void) endTimedEvent:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 
-+ (PluginResult*) getPlugInResult: (NSString*) stringToReturn;
 
 @end

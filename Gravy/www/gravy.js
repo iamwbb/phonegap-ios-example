@@ -1,35 +1,5 @@
 (function($){
  
-	var App47Plugin;
-	
-	$.getScript("phonegap-1.0.0.js", function(){	
-                
-                
-        App47Plugin = function() {
-           this.serviceName = "com.app47.sdk";
-        };         
-                
-        App47Plugin.prototype.sendGenericEvent = function(message, success, fail) {
-           return PhoneGap.exec(success, fail, this.serviceName, "sendGenericEvent", message);
-        };
-    
-                
-                
-//	   App47EventPlugin = {
-//	     sendGenericEvent: function(message, success, fail) {
-//	          return PhoneGap.exec(success, fail, "com.app47.genericevent", "sendGenericEvent", message);
-//         };
-//                
-//        startTimedEvent: function(message, success, fail) {
-//          return PhoneGap.exec(success, fail, "com.app47.starttimedevent", "startTimedEvent", message);
-//        };
-//                
-//        endTimedEvent: function(message, success, fail) {
-//          return PhoneGap.exec(success, fail, "com.app47.endtimedevent", "endTimedEvent", message);
-//        };
-//                
-//	  };	
-	});
 	
 	$(function(){
 
@@ -39,7 +9,13 @@
 	
 			descp.blur();
 			tgs.blur();
+            
+           
+            var timedEventID = 0;
 
+            window.plugins.app47.startTimedEvent(["deal submission"],  
+                        function(result){  timedEventID = result; });
+                                 
 			$.ajax({
 			      type: "PUT",
 			      url: 'http://ankara.herokuapp.com/',
@@ -52,11 +28,15 @@
 						$("#notice").append("<ul><li>Deal submitted!</li></ul>");
 						$('form :input').val("");	        
 						$("#notice").fadeOut(3200);
+                         
 					});
-					App47Plugin.sendGenericEvent(["deal submitted"]);
+                    window.plugins.app47.sendGenericEvent(["deal submitted"]);                        
+                    window.plugins.app47.endTimedEvent([timedEventID]); 
 				  }
 			});
 			
+                                
+                                 
 	        return false;       
 	    });
 
