@@ -31,7 +31,11 @@
             
             
             function doGenericEvent(){
-                window.plugins.app47.sendGenericEvent(["Andy Generic Event"]);
+                window.plugins.app47.sendGenericEvent([], function(result){alert("good result?");}, function(error){alert("error condition!");});
+            }
+
+            function logInfo(){
+                window.plugins.app47.info(["test message!"]);
             }
             
             </script>
@@ -58,7 +62,7 @@
                 </form>
                 <DIV id="phoneGapReady" class="phoneGapReady">waiting for PhoneGap to initialize....</DIV>
                 <div id="notice">
-	 				<a href="#" onclick="doGenericEvent()">Generic Event</a><br/>
+	 				<a href="#" onclick="logInfo()">logInfo</a><br/>
 				</div>
             </div>
 

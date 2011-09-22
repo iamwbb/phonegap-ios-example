@@ -14,8 +14,23 @@ if (!PhoneGap.hasResource("App47")) {
     };
     
     App47.prototype.endTimedEvent = function(name, success, fail) {
-        alert("end event!");
         return PhoneGap.exec(success, fail, this.serviceName, "endTimedEvent", name);
+    };
+    
+    App47.prototype.debug = function(message, success, fail) {
+        return PhoneGap.exec(success, fail, this.serviceName, "log", [{type:"debug", msg:message}]);
+    };
+    
+    App47.prototype.info = function(message, success, fail) {
+        return PhoneGap.exec(success, fail, this.serviceName, "log", [{type:"info", msg:message}]);
+    };
+    
+    App47.prototype.warn = function(message, success, fail) {
+        return PhoneGap.exec(success, fail, this.serviceName, "log", [{type:"warn", msg:message}]);
+    };
+    
+    App47.prototype.error = function(message, success, fail) {
+        return PhoneGap.exec(success, fail, this.serviceName, "log", [{type:"error", msg:message}]);
     };
     
     App47.install = function(){

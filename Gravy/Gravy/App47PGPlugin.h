@@ -14,6 +14,6 @@
 - (void) sendGenericEvent:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void) startTimedEvent:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 - (void) endTimedEvent:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
-
+- (void) log:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
 
 @end
