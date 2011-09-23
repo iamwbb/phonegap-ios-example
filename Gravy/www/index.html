@@ -13,9 +13,9 @@
         <script type="text/javascript" charset="utf-8" src="app47pg.js"></script>
         <script type="text/javascript" charset="utf-8">
            
-            function onDeviceReady(){
-                phoneGapReady.innerHTML = "PhoneGap is Ready";
-             }
+//            function onDeviceReady(){
+//                phoneGapReady.innerHTML = "PhoneGap is Ready";
+//             }
             
             $.jQTouch({
                       icon: 'icon.png',
@@ -30,19 +30,19 @@
             });
             
             
-            function doGenericEvent(){
-                window.plugins.app47.sendGenericEvent([], function(result){alert("good result?");}, function(error){alert("error condition!");});
-            }
-
-            function logInfo(){
-                window.plugins.app47.info(["test message!"]);
-            }
-            
-            function configValue(){
-                window.plugins.app47.getValue("PG", "enpoint_1", 
-                                function(result){alert("good result?");}, 
-                                function(error){alert("error condition!");});
-            }
+//            function doGenericEvent(){
+//                window.plugins.app47.sendGenericEvent([], function(result){alert("good result?");}, function(error){alert("error condition!");});
+//            }
+//
+//            function logInfo(){
+//                window.plugins.app47.info(["test message!"]);
+//            }
+//            
+//            function configValue(){
+//                window.plugins.app47.getValue("PG", "enpoint_1", 
+//                                function(result){alert("good result? " + result);}, 
+//                                function(error){alert("error condition!");});
+//            }
             </script>
     </head>
     <body>
@@ -65,9 +65,9 @@
 
                     </ul>
                 </form>
-                <DIV id="phoneGapReady" class="phoneGapReady">waiting for PhoneGap to initialize....</DIV>
+               
                 <div id="notice">
-	 				<a href="#" onclick="configValue()">configValue</a><br/>
+	 			
 				</div>
             </div>
 
