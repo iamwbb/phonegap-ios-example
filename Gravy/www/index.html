@@ -38,6 +38,11 @@
                 window.plugins.app47.info(["test message!"]);
             }
             
+            function configValue(){
+                window.plugins.app47.getValue("PG", "enpoint_1", 
+                                function(result){alert("good result?");}, 
+                                function(error){alert("error condition!");});
+            }
             </script>
     </head>
     <body>
@@ -62,7 +67,7 @@
                 </form>
                 <DIV id="phoneGapReady" class="phoneGapReady">waiting for PhoneGap to initialize....</DIV>
                 <div id="notice">
-	 				<a href="#" onclick="logInfo()">logInfo</a><br/>
+	 				<a href="#" onclick="configValue()">configValue</a><br/>
 				</div>
             </div>
 

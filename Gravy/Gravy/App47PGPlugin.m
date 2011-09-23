@@ -22,6 +22,24 @@
 @implementation App47PGPlugin
 
 
+- (void) configurationValue:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+{
+    NSString* callbackID = [arguments pop];
+    @try 
+    {
+        NSString* key = [options objectForKey:@"key"];
+        NSString* group = [options objectForKey:@"group"];
+        id obj = [EmbeddedAgent configurationObjectForKey:key group:group];
+        [self writeJavascript: [(PluginResult *)[App47PGPlugin getPlugInResult:(NSString *)obj] 
+                                toSuccessCallbackString:callbackID]];
+    }
+    @catch (NSException *ex) 
+    {
+        [self writeJavascript: [(PluginResult *)[App47PGPlugin getPlugInErrorResult:ex] 
+                                toErrorCallbackString:callbackID]];
+    }   
+}
+
 - (void) log:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
 {
     NSString* callbackID = [arguments pop];
@@ -91,6 +109,7 @@
     }
     
 }
+
 - (void) endTimedEvent:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
 {
     NSString* callbackID = [arguments pop];
@@ -108,7 +127,6 @@
     }
 }
 
-
 + (PluginResult*) getPlugInResult: (NSString*) stringToReturn 
 {
     return [PluginResult resultWithStatus:PGCommandStatus_OK messageAsString: 
@@ -119,8 +137,6 @@
 {
     return [PluginResult resultWithStatus:PGCommandStatus_ERROR messageAsString:[exception name]];
 }
-
-
 
 - (id)init
 {

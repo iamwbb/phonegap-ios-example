@@ -33,6 +33,10 @@ if (!PhoneGap.hasResource("App47")) {
         return PhoneGap.exec(success, fail, this.serviceName, "log", [{type:"error", msg:message}]);
     };
     
+    App47.prototype.getValue = function(grp, ky, success, fail) {
+        return PhoneGap.exec(success, fail, this.serviceName, "configurationValue", [{group:grp, key:ky}]);
+    };
+    
     App47.install = function(){
         if (typeof window.plugins == "undefined") window.plugins = {};
         if (typeof window.plugins.app47 == "undefined") window.plugins.app47 = new App47();
