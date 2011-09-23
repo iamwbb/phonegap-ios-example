@@ -1,7 +1,6 @@
 /**
   
- App47 Plugin for PhoneGap.
-   Created by the team @ App47, Inc.
+ App47 Plugin for PhoneGap iOS, created by the team @ App47, Inc.
 
   1. Include the App47 SDK files in Xcode (follow instructions from App47 documentation)
   2. Put App47PGPlugin.h and App47PGPlugin.m into PhoneGap Plugins/ directory 

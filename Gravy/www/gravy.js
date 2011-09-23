@@ -34,8 +34,8 @@
               type: "PUT",
               url: enpointURL,
               data: JSON.stringify({ deal_description: descp.val() , all_tags: tgs.val() }),
-              contentType: 'application/json', // format of request payload
-              dataType: 'json', // format of the response
+              contentType: 'application/json', 
+              dataType: 'json', 
               success: function(msg) { 
                 $('#notice').empty();
                 $("#notice").fadeIn(3, function() { 
